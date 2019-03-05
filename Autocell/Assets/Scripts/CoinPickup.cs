@@ -6,6 +6,8 @@ public class CoinPickup : MonoBehaviour {
 
 	public int value;
 
+	public GameObject pickupEffect;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -19,6 +21,8 @@ public class CoinPickup : MonoBehaviour {
 	private void OnTriggerEnter(Collider other) {
 		if(other.tag == "Player") {
 			FindObjectOfType<GameManager>().AddCoin(value);
+
+			Instantiate(pickupEffect, transform.position, transform.rotation);
 
 			Destroy(gameObject);
 		}
