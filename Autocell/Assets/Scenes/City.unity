@@ -4846,10 +4846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b75c524b2f3014d91aff25854383a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
-  jumpForce: 110
+  moveSpeed: 200
+  jumpForce: 210
   controller: {fileID: 0}
-  gravityScale: 0.1
+  gravityScale: 0.7
 --- !u!143 &1429183240
 CharacterController:
   m_ObjectHideFlags: 0
