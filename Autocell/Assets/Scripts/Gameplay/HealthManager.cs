@@ -53,7 +53,7 @@ public class HealthManager : MonoBehaviour {
 			if (currentHealth <= 0) {
 				Respawn();
 			} else {
-				thePlayer.Knockback(direction);
+				// thePlayer.Knockback(direction);
 
 				invincibilityCounter = invincibilityLength;
 

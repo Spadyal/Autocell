@@ -282,16 +282,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\CoinPickup.cs" />
-    <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\HealthManager.cs" />
-    <Compile Include="Assets\Scripts\HurtPlayer.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <ProjectReference Include="Autocell.Plugins.csproj">
+      <Project>{570D7D0D-CDD7-4522-2185-28B6B292766E}</Project>
+      <Name>Autocell.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\Gameplay\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\CoinPickup.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\DestroyOverTime.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\HealthManager.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\HurtPlayer.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CellPoolService.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewCell\NGUICell.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewCell\QuadCell.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewCell\UICollectionCell.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewLayout\CarouselFlowLayout.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewLayout\CollectionViewLayout.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewLayout\CoverFlowLayout.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewLayout\DepthFlowLayout.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\CollectionViewLayout\MessyPaperFlowLayout.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\Test\TestFlows.cs" />
+    <Compile Include="Assets\Scripts\UI\CollectionView\UICollectionView.cs" />
+    <Compile Include="Assets\Scripts\Utility\MethodExtensionForMonoBehaviourTransform.cs" />
+    <Compile Include="Assets\Scripts\Utility\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Objects\Various Objects\Free Low Poly Gold\readme.txt" />
+    <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
