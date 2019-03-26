@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 moveDirection;
 	public float gravityScale;
 
+
+
+	public float knockBackForce;
+	public float knockBackTime;
+	public float knockBackCounter;
+
 	// Use this for initialization
 	void Start () {
 		// theRB = GetComponent<Rigidbody>();
@@ -29,20 +35,32 @@ public class PlayerController : MonoBehaviour {
 
 		// moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0f, Input.GetAxis("Vertical") * moveSpeed); // f is a float value
 		// moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
-		float yStore = moveDirection.y;
-		moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal") * moveSpeed);
-		moveDirection = moveDirection.normalized * moveSpeed;
-		moveDirection.y = yStore;
+		if (knockBackCounter < 0) {
+			float yStore = moveDirection.y;
+			moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal") * moveSpeed);
+			moveDirection = moveDirection.normalized * moveSpeed;
+			moveDirection.y = yStore;
 
-		if(controller.isGrounded) {
-			moveDirection.y = 0f;
+			if(controller.isGrounded) {
+				moveDirection.y = 0f;
 
-			if(Input.GetButtonDown("Jump")) {
-				moveDirection.y = jumpForce;
+				if(Input.GetButtonDown("Jump")) {
+					moveDirection.y = jumpForce;
+				}
 			}
+		} else {
+			knockBackCounter -= Time.deltaTime;
 		}
 
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * /* Time.deltaTime * */ gravityScale);
 		controller.Move(moveDirection * Time.deltaTime);
+	}
+
+	public void Knockback (Vector3 direction) {
+		knockBackCounter = knockBackTime;
+
+		direction = new Vector3(1f, 1f, 1f);
+
+		moveDirection = direction * knockBackForce;
 	}
 }
