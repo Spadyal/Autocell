@@ -17,11 +17,10 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if(cell!=null) {
-	    	List<QuadCell.index> index = new List<QuadCell.index>();
+    	/*if(cell!=null) {
 	        for(int i = 0; i <= index.Count; i++) {
 
 	        }
-	    }
+	    }*/
     }
 }

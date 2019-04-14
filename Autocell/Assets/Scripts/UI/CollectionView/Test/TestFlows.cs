@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class TestFlows : MonoBehaviour {
 
@@ -16,6 +17,9 @@ public class TestFlows : MonoBehaviour {
     [SerializeField]
     private int m_groupSizes = 10;
 
+    [SerializeField]
+    private Text[] cellCategories;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -28,7 +32,7 @@ public class TestFlows : MonoBehaviour {
             {
                 if(m_colourData!=null && m_colourData.Length > 0)
                 {
-                    data.Add(new QuadCell.QuadCellData() { MainColor = m_colourData[(i / m_groupSizes) % m_colourData.Length] });
+                    data.Add(new QuadCell.QuadCellData() { MainColor = m_colourData[(i / m_groupSizes) % m_colourData.Length], MainText = cellCategories[(i / m_groupSizes) % cellCategories.Length] });
                 }
                 else
                 {
