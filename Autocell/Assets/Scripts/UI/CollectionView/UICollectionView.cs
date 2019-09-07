@@ -22,6 +22,9 @@ public class UICollectionView : MonoBehaviour {
     private iCollectionViewCell m_cell;
 
     [SerializeField]
+    private iCollectionViewCell m_cellText;
+
+    [SerializeField]
     private CollectionViewLayout m_layout;
 
     [SerializeField]

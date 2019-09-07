@@ -21,15 +21,15 @@ public class CellPoolService : Singleton<CellPoolService> {
     }
 
     //This will overwrite any previously registered!
-	public void RegisterCell(iCollectionViewCell prefab)
+	public void RegisterCell(iCollectionViewCell prefab1)
     {
-        if(m_nibs.ContainsKey(prefab.NibName))
+        if(m_nibs.ContainsKey(prefab1.NibName))
         {
-            m_nibs[prefab.NibName] = prefab;
+            m_nibs[prefab1.NibName] = prefab1;
         }
         else
         {
-            m_nibs.Add(prefab.NibName, prefab);
+            m_nibs.Add(prefab1.NibName, prefab1);
         }
     }
 	public void RegisterCellForNib(iCollectionViewCell prefab, string nib)

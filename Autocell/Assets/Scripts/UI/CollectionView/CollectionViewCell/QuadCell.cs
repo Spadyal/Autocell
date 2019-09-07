@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class QuadCell : iCollectionViewCell
 {
@@ -13,8 +12,8 @@ public class QuadCell : iCollectionViewCell
             get { return m_color; }
             set { m_color = value; }
         }
-        private Text m_text;
-        public Text MainText
+        private string m_text;
+        public string MainText
         {
             get { return m_text; }
             set { m_text = value; }
@@ -38,7 +37,7 @@ public class QuadCell : iCollectionViewCell
 
     Material m_material;
     Renderer m_renderer;
-    Text m_cellCategory;
+    TextMesh m_sign;
 
     public override void SetData(object data)
     {
@@ -52,6 +51,11 @@ public class QuadCell : iCollectionViewCell
             m_material = m_renderer.material;
         }
 
+        if(m_sign!=null)
+            // m_sign = GetComponent<TextMesh>();
+            // m_sign = GameObject.Find("CellCategory");
+            m_sign = (TextMesh)GetComponent(typeof(TextMesh));
+
         //Set Color
         if(m_material!=null)
         {
@@ -61,9 +65,15 @@ public class QuadCell : iCollectionViewCell
                 m_material.color = quadData.MainColor;
                 m_renderer.material = m_material;
             }
+        }
+
+        //Set Text
+        if(m_sign!=null)
+        {
+            QuadCellData quadData = data as QuadCellData;
             if(quadData!=null && quadData.MainText != null)
             {
-                m_cellCategory = quadData.MainText;
+                m_sign.text = quadData.MainText;
             }
         }
     }
