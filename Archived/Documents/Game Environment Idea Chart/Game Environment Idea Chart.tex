@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in, letterpaper]{geometry}
+\usepackage{supertabular}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{verbatim}
+\usepackage[table]{xcolor}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\pagenumbering{gobble}
+
+\title{Game Idea Chart}
+
+\begin{document}
+\tablehead{
+    \textbf{Zone} & \textbf{Stage} & \textbf{Brands} & \textbf{Gear} \\ \hline \hline
+}
+
+\tablelasttail{
+\\
+}
+
+\begin{large}
+\begin{center}
+\begin{supertabular}{r|c||C{1.5in}|L{1.5in}}
+    \multirow{4}*{Route 9, \textsc{New York, USA}} & Ivory Road &  & \multirow{4}*{\parbox[c]{1.5in}{Car Parts, Motorcycle Parts, Bicycle Parts, }} \\
+     & Cobalt Thruway &  &  \\
+     & Scarlet Bridge &  &  \\
+     & Steel Convoy &  &  \\ \hline
+    \multirow{4}*{Candy Country, \textsc{Belgium}} & Cake Desert & Bed, Bath \& Beyond & \multirow{4}*{\parbox[c]{1.5in}{}} \\
+     & Chocolate Conduit &  &  \\
+     & Jelly Jubilee &  &  \\
+     &  &  &  \\ \hline
+    \multirow{4}*{Aqua Beach, \textsc{Florida, USA}} & Coastal Shore & Quiksilver & \multirow{4}*{\parbox[c]{1.5in}{}} \\
+     & Fruity Jungle &  &  \\
+     & Tubular Aquarium &  &  \\
+     & Cerulean Harbor &  &  \\ \hline
+    \multirow{4}*{Winter Paradise, \textsc{Greenland}} & Frosty Mountains & The North Face & \multirow{4}*{\parbox[c]{1.5in}{}} \\
+     & Snowy Village & Columbia &  \\
+     & Polar Park &  &  \\
+     & Chilly Casino &  &  \\ \hline
+    \multirow{4}*{Vernal Forest, \textsc{Italy}} & Dawn Hill & L.L.Bean & \multirow{4}*{\parbox[c]{1.5in}{}} \\
+     & Dusk Woods & REI &  \\
+     & Rainy Cave &  &  \\
+     & Abandoned Castle &  &  \\ \hline
+    \multirow{4}*{Astral Sky, \textsc{Unknown}} & Star Realm & SkyMall & \multirow{4}*{\parbox[c]{1.5in}{}} \\
+     & Cloud Highland &  &  \\
+     & Wish Garden &  &  \\
+     & Serpent Jump &  &  \\ \hline
+    \multirow{4}*{Game Network, \textsc{Japan}} & Techno District & Brookstone & \multirow{4}*{\parbox[c]{1.5in}{}} \\
+     & Time Rush &  &  \\
+     & Hidden Cyberpunk &  & \\
+     & Virus Void &  &  \\ \hline
+    \multirow{4}*{Cosmic , \textsc{Unknown}} & Metal Base & \cellcolor{black} & \cellcolor{black} \\
+     & Gravity Corridor & \cellcolor{black} & \cellcolor{black} \\
+     & Boiler Room & \cellcolor{black} & \cellcolor{black} \\
+     & Sector 37 & \cellcolor{black} & \cellcolor{black}
+    \begin{comment}
+        \multirow{3}*{Dusk City, Nevada, USA} & Broadway  &  &  \\
+         & Casino Playground &  &  \\
+         &  &  &  \\
+         &  &  &  \\ \hline
+        \multirow{3}*{Dragon Festival, China} & Golden Wall & The North Face &  \\
+         & Temple  & Columbia &  \\
+         &  &  &  \\
+         & Nightmare Ritual &  &  \\ \hline
+        \multirow{3}*{Blazing Desert, } & Sandy Dunes &  &  \\
+         &  &  &  \\
+         &  &  &  \\
+         &  &  &  \\ \hline
+        \multirow{3}*{Dawn Hill, } &  &  &  \\
+         &  &  &  \\
+         &  &  &  \\
+         &  &  &  \\ \hline
+        \multirow{3}*{Magic Kingdom, England} &  &  &  \\
+         &  &  &  \\
+         &  &  &  \\
+         &  &  &  \\ \hline
+    \end{comment}
+\end{supertabular}
+\end{center}
+\end{large}
+
+\end{document}
